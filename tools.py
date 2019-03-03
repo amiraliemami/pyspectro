@@ -23,11 +23,11 @@ def wavelengths():
 
 # demo data, all at single frame 0.5 sec int time
 def spectrum_demo():
-    return np.loadtxt('spectro/flour.txt')
+    return np.loadtxt('spectro/data/flour.txt')
 def dark_demo():
-    return np.loadtxt('spectro/dark_5_1.txt')
+    return np.loadtxt('spectro/data/dark_5_1.txt')
 def standard_demo():
-    return np.loadtxt('spectro/standard_5_1.txt')
+    return np.loadtxt('spectro/data/standard_5_1.txt')
 
 
 

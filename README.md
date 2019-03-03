@@ -12,7 +12,7 @@ import seabreeze.spectrometers as sb
 ```
 
 ## Usage
-Clone this repository into your working folder where your intended python code lives. At the top of your script, add 
+Clone this repository, and copy all contents into a folder called "pyspectro" in your working folder where your python code lives. At the top of your script, add 
 ```
 from pyspectro import tools
 ```

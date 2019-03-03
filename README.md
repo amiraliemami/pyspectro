@@ -26,35 +26,48 @@ dark_demo()
 standard_demo()
 ```
 
-spectrum smoothing
-IN:  y     array of intensities
-     p     parameter, standard deviation for gauss and number of pixels to each side for boxcar
-OUT: smoothed ys
-
+### spectrum smoothing
 ```
 gaussian(y,p)
 boxcar(y,p)
 ```
+inputs
 
-IN: n          number of frames to average, default 1 frame
-    int_secs   integration time per frame
-    smoother   either 'boxcar', 'gaussian', or None. Default = None
-    p          parameter for smoother, i.e. number of boxcar frames to each side, or tau if gaussian. Default = 1
-    sub        frame as array length same as y to be taken off captured frame (as dark)
-    div        frame to divide by (as calibration)
-    !! Note that this frame must have been captured at same integration time and number of frame averages !!
+- y     array of intensities
+- p     parameter, standard deviation for gauss and number of pixels to each side for boxcar
 
-OUT: result    array of spectrum values
+returns
+
+- smoothed ys
+
+### capture spectrum
 ```
 capture(n = 1, int_secs = 0.5, smoother = None, p = 1, sub = [], div = [])
 ```
 
-save to file
+Parameters
+
+- n          number of frames to average, default 1 frame
+- int_secs   integration time (in seconds) per frame
+- smoother   either 'boxcar', 'gaussian', or None. Default = None
+- p          parameter for smoother, i.e. number of boxcar frames to each side, or tau if gaussian. Default = 1
+- sub        frame as array length same as y to be taken off captured frame (as dark)
+- div        frame to divide by (as calibration)
+!! Note that this frame must have been captured at same integration time and number of frame averages !!
+
+Returns
+
+- result    array of spectrum values
+
+
+### easy save to file
 ```
 saveit(y, 'name_no_extention')
 ```
 
-plot, takes in dark-subbed y and standard and shows three graphs: raw y, y/standard, smoothed y/standard
+### easy demo plot 
+
+takes in dark-subbed y and standard and shows three graphs: raw y, y/standard, smoothed y/standard
 ```
 plot_demo(y, standard, smoother = 'boxcar', p = 10)
 ```

@@ -87,12 +87,15 @@ def boxcar(y,p):
 
 ### capture function
 
-# IN: n         number of frames to average, default 1 frame
-#    int_secs   integration time per frame
-#    smoother   either 'boxcar', 'gaussian', or None. Default = None
-#    p          parameter for smoother, i.e. number of boxcar frames to each side, or tau if gaussian. Default = 1
-#    dark     frame as array length same as y to be taken off captured frame
-# !! (Note that this frame must have been captured at same integration time and number of frame averages) !!
+# IN: n          number of frames to average, default 1 frame
+#     int_secs   integration time per frame
+#     smoother   either 'boxcar', 'gaussian', or None. Default = None
+#     p          parameter for smoother, i.e. number of boxcar frames to each side, or tau if gaussian. Default = 1
+#     sub        frame as array length same as y to be taken off captured frame (as dark)
+#     div        frame to divide by (as calibration)
+#     !! Note that this frame must have been captured at same integration time and number of frame averages !!
+
+# OUT: result    array of spectrum values
 
 def capture(n = 1, int_secs = 0.5, smoother = None, p = 1, sub = [], div = []):
     
